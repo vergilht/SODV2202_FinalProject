@@ -15,11 +15,10 @@ app.get("/", (req, res) => {
 
 // API endpoints
 app.get("/api/fights", (req, res) => {
-  // Logic to get upcoming fights data
-  const upcomingFights = [
-    { fighter1: "Fighter A", fighter2: "Fighter B" },
-    // Add more fights as needed
-  ];
+  
+  const upcomingFights = req.body;
+  
+    
   res.json(upcomingFights);
 });
 

@@ -1,3 +1,5 @@
+import { GetFights } from "./db.js";
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -14,12 +16,14 @@ app.get("/", (req, res) => {
 });
 
 // API endpoints
-app.get("/api/fights", (req, res) => {
-  
-  const upcomingFights = req.body;
-  
-    
-  res.json(upcomingFights);
+app.get("/api/fights", async (req, res) => {
+  try {
+    const fights = await GetFights();
+    res.status(200).json(fights);
+  } catch (error) {
+    console.error("Error during getting fight events:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 app.get("/api/predictions", (req, res) => {

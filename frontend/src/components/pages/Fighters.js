@@ -72,193 +72,229 @@ function Fighters() {
 
                             <div className="comparison-row-main"></div>
 
-                            // I want to have two columns here, one for fighter 1 and one for fighter 2 and display the fighter's ID which is fetched from the database
+
                             <div>Fighter ID</div>
                             <div className="comparison-row">
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.fighter_id} value={index}>
-                                            {fighter.fighter_id}
-                                        </option>
-                                    ))}
-                                </select>
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.fighter_id} value={index}>
-                                            {fighter.fighter_id}
-                                        </option>
-                                    ))}
-                                </select>
+                                <div className="comparison-fighter1">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.fighter_id} value={index}>
+                                                {fighter.fighter_id}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="comparison-fighter2">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.fighter_id} value={index}>
+                                                {fighter.fighter_id}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
 
-                            // I want to have two columns here, one for fighter 1 and one for fighter 2 and display the fighter's nickname which is fetched from the database
+
                             <div>Nickname</div>
                             <div className="comparison-row">
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.fighter_nickname} value={index}>
-                                            {fighter.fighter_nickname}
-                                        </option>
-                                    ))}
-                                </select>
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.fighter_nickname} value={index}>
-                                            {fighter.fighter_nickname}
-                                        </option>
-                                    ))}
-                                </select>
+                                <div className="comparison-fighter1">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.fighter_nickname} value={index}>
+                                                {fighter.fighter_nickname}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="comparison-fighter2">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.fighter_nickname} value={index}>
+                                                {fighter.fighter_nickname}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
 
-                            // I want to have two columns here, one for fighter 1 and one for fighter 2 and display the fighter's team name which is fetched from the database
+
                             <div>Team Name</div>
                             <div className="comparison-row">
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.fighter_team} value={index}>
-                                            {fighter.fighter_team}
-                                        </option>
-                                    ))}
-                                </select>
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.fighter_team} value={index}>
-                                            {fighter.fighter_team}
-                                        </option>
-                                    ))}
-                                </select>
+                                <div className="comparison-fighter1">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.fighter_team} value={index}>
+                                                {fighter.fighter_team}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="comparison-fighter2">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.fighter_team} value={index}>
+                                                {fighter.fighter_team}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
 
-                            // I want to have two columns here, one for fighter 1 and one for fighter 2 and display the fighter's height which is fetched from the database
+
                             <div>Height</div>
                             <div className="comparison-row">
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.height} value={index}>
-                                            {fighter.height}
-                                        </option>
-                                    ))}
-                                </select>
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.height} value={index}>
-                                            {fighter.height}
-                                        </option>
-                                    ))}
-                                </select>
+                                <div className="comparison-fighter1">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.height} value={index}>
+                                                {fighter.height}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="comparison-fighter2">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.height} value={index}>
+                                                {fighter.height}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
 
-                            // I want to have two columns here, one for fighter 1 and one for fighter 2 and display the fighter's weight which is fetched from the database
+
                             <div>Weight</div>
                             <div className="comparison-row">
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.weight} value={index}>
-                                            {fighter.weight}
-                                        </option>
-                                    ))}
-                                </select>
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.weight} value={index}>
-                                            {fighter.weight}
-                                        </option>
-                                    ))}
-                                </select>
+                                <div className="comparison-fighter1">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.weight} value={index}>
+                                                {fighter.weight}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="comparison-fighter2">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.weight} value={index}>
+                                                {fighter.weight}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
 
-                            // I want to have two columns here, one for fighter 1 and one for fighter 2 and display the fighter's birth date which is fetched from the database
+
                             <div>Birth Date</div>
                             <div className="comparison-row">
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.birthdate} value={index}>
-                                            {fighter.birthdate}
-                                        </option>
-                                    ))}
-                                </select>
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.birthdate} value={index}>
-                                            {fighter.birthdate}
-                                        </option>
-                                    ))}
-                                </select>
+                                <div className="comparison-fighter1">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.birthdate} value={index}>
+                                                {fighter.birthdate}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="comparison-fighter2">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.birthdate} value={index}>
+                                                {fighter.birthdate}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
 
-                            // I want to have two columns here, one for fighter 1 and one for fighter 2 and display the fighter's reach which is fetched from the database
+
                             <div>Reach</div>
                             <div className="comparison-row">
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.reach} value={index}>
-                                            {fighter.reach}
-                                        </option>
-                                    ))}
-                                </select>
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.reach} value={index}>
-                                            {fighter.reach}
-                                        </option>
-                                    ))}
-                                </select>
+                                <div className="comparison-fighter1">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.reach} value={index}>
+                                                {fighter.reach}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="comparison-fighter2">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.reach} value={index}>
+                                                {fighter.reach}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
 
-                            // I want to have two columns here, one for fighter 1 and one for fighter 2 and display the fighter's stance which is fetched from the database
+
                             <div>Stance</div>
                             <div className="comparison-row">
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.stance} value={index}>
-                                            {fighter.stance}
-                                        </option>
-                                    ))}
-                                </select>
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.stance} value={index}>
-                                            {fighter.stance}
-                                        </option>
-                                    ))}
-                                </select>
+                                <div className="comparison-fighter1">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.stance} value={index}>
+                                                {fighter.stance}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="comparison-fighter2">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.stance} value={index}>
+                                                {fighter.stance}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
 
-                            // I want to have two columns here, one for fighter 1 and one for fighter 2 and display the fighter's weight class ID which is fetched from the database
+
                             <div>Weight Class ID</div>
                             <div className="comparison-row">
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.weightclass_id} value={index}>
-                                            {fighter.weightclass_id}
-                                        </option>
-                                    ))}
-                                </select>
-                                <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
-                                    <option value="">Select Fighter</option>
-                                    {fighters.map((fighter, index) => (
-                                        <option key={fighter.weightclass_id} value={index}>
-                                            {fighter.weightclass_id}
-                                        </option>
-                                    ))}
-                                </select>
+                                <div className="comparison-fighter1">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, true)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.weightclass_id} value={index}>
+                                                {fighter.weightclass_id}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className="comparison-fighter2">
+                                    <select onChange={(e) => handleSelectFighter1(e.target.value, false)}>
+                                        <option value="">Select Fighter</option>
+                                        {fighters.map((fighter, index) => (
+                                            <option key={fighter.weightclass_id} value={index}>
+                                                {fighter.weightclass_id}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>

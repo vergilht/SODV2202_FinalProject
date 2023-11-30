@@ -2,7 +2,7 @@ import sql from "mssql";
 
 export const config = {
   server: "localhost",
-  port: 57000,
+  port: 5100,
   user: "user",
   password: "user",
   database: "MMA UFC Fights",
@@ -29,7 +29,12 @@ const executeQuery = async (query, params) => {
     console.error("Error executing query:", err);
     throw err;
   } finally {
-    await sql.close();
+    try {
+      // Close the connection
+      await sql.close();
+    } catch (err) {
+      console.error("Error closing connection:", err);
+    }
   }
 };
 
@@ -42,7 +47,24 @@ export const GetFights = async function () {
   try {
     const result = await executeQuery(query, []);
 
-    return { message: "success" };
+    return result;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
+// GET Fighters
+
+export const GetFighters = async function () {
+  const query = `
+      SELECT * FROM Fighters
+      `;
+
+  try {
+    const result = await executeQuery(query, []);
+
+    return result;
   } catch (err) {
     console.error(err);
     throw err;

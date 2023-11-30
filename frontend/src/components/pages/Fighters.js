@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './Fighters.css';
+import { Link } from 'react-router-dom';
 
 function Fighters() {
     const [fighters, setFighters] = useState([]);

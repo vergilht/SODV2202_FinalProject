@@ -16,7 +16,7 @@ MMA Prediction Tracker is a web application that allows users to track upcoming 
 
 ```bash
 /mma_prediction_tracker
-    /client
+    /frontend
         /src
             App.js
             index.js

@@ -9,8 +9,8 @@ const port = 5100;
 // Use middleware to parse JSON
 app.use(bodyParser.json());
 
-// Serve static files from the client directory
-app.use(express.static("../client/build"));
+// Serve static files from the frontend directory
+app.use(express.static("../frontend/build"));
 
 app.get("/", (req, res) => {
     res.send("Server connected with React.js");

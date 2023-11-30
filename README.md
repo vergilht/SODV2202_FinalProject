@@ -42,21 +42,24 @@ MMA Prediction Tracker is a web application that allows users to track upcoming 
 ```bash
 git clone git@github.com:vergilht/SODV2202_FinalProject.git
 cd mma_prediction_tracker
-````
+```
 
 ### Install Dependencies:
+
 ```bash
 npm install
-````
+```
 
 ### Run the Application:
+
 ```bash
 npm run dev
-````
+```
+
 Open your browser and navigate to http://localhost:3000.
 
-
 ## Contributing
+
 Feel free to contribute to the project! Follow these steps:
 
 1. Fork the repository.
@@ -64,4 +67,3 @@ Feel free to contribute to the project! Follow these steps:
 3. Make your changes and commit: git commit -am 'Add new feature'.
 4. Push to the branch: git push origin feature/new-feature.
 5. Submit a pull request.
-

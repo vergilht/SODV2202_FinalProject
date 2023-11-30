@@ -1,16 +1,17 @@
 import { GetFights } from "./db.js";
 import { GetFighters } from "./db.js";
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
 
-const express = require("express");
-const bodyParser = require("body-parser");
+const { json, urlencoded } = bodyParser;
 const app = express();
 const port = 5100;
 
-// Use middleware to parse JSON
-app.use(bodyParser.json());
+app.use(cors());
+app.use(json());
+app.use(urlencoded({ extended: true }));
 
-// Serve static files from the frontend directory
-app.use(express.static("../frontend/build"));
 
 app.get("/", (req, res) => {
     res.send("Server connected with React.js");

@@ -230,7 +230,6 @@ strong {
     text-align: center;
     letter-spacing: 2px;
     text-transform: uppercase;
-    background-image: url('../images/Vector-4.svg');
     background-position: 20px;
     background-repeat: no-repeat;
     background-size: auto 15px;
@@ -254,7 +253,6 @@ strong {
 .button.white {
     background-color: var(--white);
     color: var(--dark-blue);
-    background-image: url('../images/Vector-4-1.svg');
 }
 
 .navbar {

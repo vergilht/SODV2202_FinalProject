@@ -1,12 +1,10 @@
 import express from "express";
 import { GetFights } from "./db.js";
 import { GetFighters } from "./db.js";
-import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+const { json, urlencoded } = bodyParser;
 
-const express = require("express");
-const bodyParser = require("body-parser");
 const app = express();
 const port = 5100;
 

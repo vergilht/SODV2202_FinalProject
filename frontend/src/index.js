@@ -1,14 +1,14 @@
-import React, { StrictMode } from "react";
-import ReactDOM from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App.js";
 import "./index.css";
-import App from "./App.js";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <StrictMode>
-    <BrowserRouter>
+ReactDOM.render(
+  <React.StrictMode>
+    <Router>
       <App />
-    </BrowserRouter>
-  </StrictMode>
+    </Router>
+  </React.StrictMode>,
+  document.getElementById("root")
 );

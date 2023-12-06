@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Fighters from "./pages/Fighters.js";
+import HomePage from "./HomePage.js";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Fighters />} />
+      <Route path="/" element={<HomePage />} />
     </Routes>
   );
 }

@@ -8,7 +8,7 @@ function Fighters() {
   const [selectedFighter1, setSelectedFighter1] = useState(null);
   const [selectedFighter2, setSelectedFighter2] = useState(null);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     // Fetch fighters data from backend API
     fetch("/api/fighters")
       .then((res) => res.json())
@@ -22,7 +22,7 @@ function Fighters() {
       setSelectedFighter2(fighter);
     }
   };
-
+ */
   return (
     <div>
       {/* <div style={{ opacity:0 }} className="page-wrap">

@@ -58,14 +58,17 @@ export const GetFightsWithIndex = async function (offset) {
   try {
     const limit = 5;
     const query = `
-      SELECT * FROM fight
-      ORDER BY fight_id 
-      OFFSET ${offset} ROWS 
-      FETCH NEXT ${limit} ROWS ONLY;
-      `;
+          SELECT f.*, ft1.*, ft2.*
+          FROM fight f
+          LEFT JOIN fighter ft1 ON f.fighter1_id = ft1.fighter_id
+          LEFT JOIN fighter ft2 ON f.fighter2_id = ft2.fighter_id
+          ORDER BY f.fight_id 
+          OFFSET ${offset} ROWS 
+          FETCH NEXT ${limit} ROWS ONLY;
+            `;
 
     const result = await executeQuery(query, []);
-
+    console.log(result);
     return result;
   } catch (err) {
     console.error(err);

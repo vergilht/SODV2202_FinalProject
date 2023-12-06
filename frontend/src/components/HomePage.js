@@ -22,7 +22,7 @@ const HomePage = () => {
       <Fights />
 
       {/* Fighters Section */}
-      <h2>Fighters</h2>
+      {/*       <h2>Fighters</h2>
       <div className="fighters-container">
         <div className="fighters-column">
           {fighters.slice(0, 3).map((fighter) => (
@@ -49,7 +49,7 @@ const HomePage = () => {
           ))}
         </div>
       </div>
-
+ */}
       {/* Predictions Section */}
       <Predictions />
 

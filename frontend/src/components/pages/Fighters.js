@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
-import '../styles/Fighters.css';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
+import "../styles/Fighters.css";
+import { Link } from "react-router-dom";
 
 function Fighters() {
-    const [fighters, setFighters] = useState([]);
-    const [selectedFighter1, setSelectedFighter1] = useState(null);
-    const [selectedFighter2, setSelectedFighter2] = useState(null);
+  const [fighters, setFighters] = useState([]);
+  const [selectedFighter1, setSelectedFighter1] = useState(null);
+  const [selectedFighter2, setSelectedFighter2] = useState(null);
 
-    useEffect(() => {
-        // Fetch fighters data from backend API
-        fetch("/api/fighters")
-            .then((res) => res.json())
-            .then((data) => setFighters(data))
-            .catch((err) => console.error("Error fetching fighters:", err));
-    }, []);
-    const handleSelectFighter1 = (fighter, isFighter1) => {
-        if (isFighter1) {
-            setSelectedFighter1(fighter);
-        } else {
-            setSelectedFighter2(fighter);
-        }
-    };
+  useEffect(() => {
+    // Fetch fighters data from backend API
+    fetch("/api/fighters")
+      .then((res) => res.json())
+      .then((data) => setFighters(data))
+      .catch((err) => console.error("Error fetching fighters:", err));
+  }, []);
+  const handleSelectFighter1 = (fighter, isFighter1) => {
+    if (isFighter1) {
+      setSelectedFighter1(fighter);
+    } else {
+      setSelectedFighter2(fighter);
+    }
+  };
 
-    return (
-        <div>
-            <div style={{ opacity:0 }} className="page-wrap">
+  return (
+    <div>
+      {/* <div style={{ opacity:0 }} className="page-wrap">
                 <div data-collapse="medium" data-animation="over-right" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" className="navbar">
                     <div className="container nav-container">
                         <img src="/public/MMA%20TRACKER.png" alt="" className="brand-logo" />
@@ -344,9 +344,9 @@ function Fighters() {
                     }
                     `}
                 </style>
-            </div>
-        </div>
-    );
+            </div> */}
+    </div>
+  );
 }
 
 export default Fighters;

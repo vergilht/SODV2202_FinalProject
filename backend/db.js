@@ -38,12 +38,35 @@ const executeQuery = async (query, params) => {
 };
 
 // GET fights
-export const GetFights = async function () {
+/*export const GetFights = async function () {
   const query = `
+      SELECT * FROM fight
       SELECT * FROM fight
       `;
 
   try {
+    const result = await executeQuery(query, []);
+
+    return result;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+}; */
+
+export const GetFightsWithIndex = async function (offset) {
+  try {
+    const limit = 5;
+    const query = `
+          SELECT f.*, ft1.*, ft2.*
+          FROM fight f
+          LEFT JOIN fighter ft1 ON f.fighter1_id = ft1.fighter_id
+          LEFT JOIN fighter ft2 ON f.fighter2_id = ft2.fighter_id
+          ORDER BY f.fight_id 
+          OFFSET ${offset} ROWS 
+          FETCH NEXT ${limit} ROWS ONLY;
+            `;
+
     const result = await executeQuery(query, []);
 
     return result;

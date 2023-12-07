@@ -1,10 +1,10 @@
-import { GetFights } from "./db.js";
-import { GetFighters } from "./db.js";
 import express from "express";
+import { GetFightsWithIndex } from "./db.js";
+import { GetFighters } from "./db.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-
 const { json, urlencoded } = bodyParser;
+
 const app = express();
 const port = 5100;
 
@@ -39,9 +39,20 @@ app.get("/", (req, res) => {
 });
 
 // API endpoints
-app.get("/api/fights", async (req, res) => {
+/* app.get("/api/fights", async (req, res) => {
   try {
     const fights = await GetFights();
+    res.status(200).json(fights);
+  } catch (error) {
+    console.error("Error during getting fight events:", error);
+    res.status(500).json({ error: "Error getting fights events" });
+  }
+});
+ */
+app.get("/api/fights/", async (req, res) => {
+  try {
+    const { offset } = req.query; //offset is the last fight_id
+    const fights = await GetFightsWithIndex(offset);
     res.status(200).json(fights);
   } catch (error) {
     console.error("Error during getting fight events:", error);

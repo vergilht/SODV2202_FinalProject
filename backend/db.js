@@ -40,7 +40,7 @@ const executeQuery = async (query, params) => {
 // GET fights
 export const GetFights = async function () {
   const query = `
-      SELECT * FROM Fights
+      SELECT * FROM fight
       `;
 
   try {
@@ -57,7 +57,7 @@ export const GetFights = async function () {
 
 export const GetFighters = async function () {
   const query = `
-      SELECT * FROM Fighters
+      SELECT * FROM fighter
       `;
 
   try {

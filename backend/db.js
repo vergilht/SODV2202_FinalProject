@@ -92,3 +92,17 @@ export const GetFighters = async function () {
     throw err;
   }
 };
+
+export const GetFighterById = async (id) => {
+const query = 
+  `SELECT * FROM fighter WHERE fighter_id = ${id}`;
+
+  try {
+    const result = await executeQuery(query, []);
+
+    return result;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+}

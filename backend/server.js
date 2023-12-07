@@ -1,6 +1,6 @@
 import express from "express";
 import { GetFightsWithIndex } from "./db.js";
-import { GetFighters } from "./db.js";
+import { GetFighters, GetFighterById } from "./db.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 const { json, urlencoded } = bodyParser;
@@ -32,7 +32,6 @@ app.use(express.static("../client/build"));
 app.use(cors());
 app.use(json());
 app.use(urlencoded({ extended: true }));
-
 
 app.get("/", (req, res) => {
   res.send("Server connected with React.js");
@@ -77,50 +76,100 @@ app.get("/api/fighters/:id", (req, res) => {
   res.json(response);
 });
 
-app.get("/api/predictions", (req, res) => {
+app.get("/api/predictions", async (req, res) => {
   const fighterId1 = req.query.fighterId1;
   const fighterId2 = req.query.fighterId2;
 
-  const fighter1 = { ...fighter, wins: 100, loses: 2 };
-  const fighter2 = {
-    ...fighter,
-    wins: 3,
-    loses: 1,
-    height: 210,
-  };
-  /* Logic to get predictions data
-  const fighter1 = getFighterProfileById(fighterId1);
-  const fighter2 = getFighterProfileById(fighterId2);
-  function getFighterProfileById(id){
-  SELECT * FROM fighter WHERE fighter_id = id
-}
-function getFighterResults(id){
-  query to retrive winner and loser
-}
-*/
-  if (fighter1 && fighter2) {
-    const fighter1Stats = calculateFighterStats(fighter1);
-    const fighter2Stats = calculateFighterStats(fighter2);
+  const fighter1Response = await GetFighterById(fighterId1);
+  const fighter2Response = await GetFighterById(fighterId2);
 
-    if (fighter1Stats > fighter2Stats) {
-      res.json(fighter1);
-    } else if (fighter1Stats < fighter2Stats) {
-      res.json(fighter2);
-    } else {
-      res.json(null);
-    }
+  const fighter1 = fighter1Response[0];
+  const fighter2 = fighter2Response[0];
+
+  if (fighter1 && fighter2) {
+    res.json(calcFighterPrediction(fighter1, fighter2));
   } else {
-    res.json({});
+    res.status(500).json({ message: "Fighter not found" });
   }
 });
 
-function calculateFighterStats(fighterWL) {
-  return (
-    fighterWL.height * 5 +
-    fighterWL.reach * 7 +
-    fighterWL.weight / 10 +
-    (fighterWL.wins / fighterWL.loses) * 10
-  );
+function calcFighterPrediction(fighter1, fighter2) {
+  let f1 = 0;
+  let f2 = 0;
+
+  if (fighter1.height > fighter2.height) {
+    f1 = f1 + 1;
+  } else if (fighter1.height < fighter2.height) {
+    f2 = f2 + 1;
+  } else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+  }
+
+  if (fighter1.weight > fighter2.weight) {
+    f1 = f1 + 1;
+  } else if (fighter1.weight < fighter2.weight) {
+    f2 = f2 + 1;
+  } else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+  }
+
+  if (fighter1.wins > fighter2.wins) {
+    f1 = f1 + 1;
+  } else if (fighter1.wins < fighter2.wins) {
+    f2 = f2 + 1;
+  } else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+  }
+
+  if (fighter1.reach > fighter2.reach) {
+    f1 = f1 + 1;
+  } else if (fighter1.reach < fighter2.reach) {
+    f2 = f2 + 1;
+  } else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+  }
+
+  if (fighter1.stance == "Switch") {
+    var stance1 = 3;
+  } else if (fighter1.stance == "Southpaw") {
+    stance1 = 2;
+  } else {
+    stance1 = 1;
+  }
+
+  if (fighter2.stance == "Switch") {
+    var stance2 = 3;
+  } else if (fighter2.stance == "Southpaw") {
+    stance2 = 2;
+  } else {
+    stance2 = 1;
+  }
+
+  if (stance1 > stance2) {
+    f1 = f1 + 1;
+  } else if (stance1 < stance2) {
+    f2 = f2 + 1;
+  } else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+  }
+
+  if (fighter1.ranking < fighter2.ranking) {
+    f1 = f1 + 2;
+  } else if (fighter1.raking > fighter2.raking) {
+    f2 = f2 + 2;
+  } else {
+    f1 = f1 + 2;
+    f2 = f2 + 2;
+  }
+  const probFighter1 = (f1 * 100) / (f1 + f2);
+  const probFighter2 = (f2 * 100) / (f1 + f2);
+
+  return { fighter1: probFighter1, fighter2: probFighter2 };
 }
 
 // Start the server

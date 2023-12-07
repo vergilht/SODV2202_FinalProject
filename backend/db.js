@@ -80,7 +80,7 @@ export const GetFightsWithIndex = async function (offset) {
 
 export const GetFighters = async function () {
   const query = `
-      SELECT * FROM Fighters
+      SELECT * FROM fighter
       `;
 
   try {

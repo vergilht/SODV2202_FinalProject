@@ -8,15 +8,17 @@ function Fighters() {
   const [selectedFighter1, setSelectedFighter1] = useState(null);
   const [selectedFighter2, setSelectedFighter2] = useState(null);
 
-  useEffect(() => {
+  useEffect(async () => {
     // Fetch fighters data from backend API
-    fetch("/api/fighters")
+    await fetch("/api/fighters")
       .then((res) => res.json())
       .then((data) => setFighters(data))
       .catch((err) => console.error("Error fetching fighters:", err));
   }, []);
+  console.log(fighters);
   const handleSelectFighter1 = (fighter, isFighter1) => {
     if (isFighter1) {
+      console.log(fighter);
       setSelectedFighter1(fighter);
     } else {
       setSelectedFighter2(fighter);

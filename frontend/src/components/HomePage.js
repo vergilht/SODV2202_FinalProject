@@ -1,7 +1,7 @@
 import React from "react";
 import Fights from "./Fights.js";
 //import Predictions from "./Predictions.js";
-//import Fighters from "./Fighters.js";
+import Fighters from "./pages/Fighters.js";
 //import "../styles/style.css";
 import { Link } from "react-router-dom";
 
@@ -12,6 +12,7 @@ const HomePage = () => {
       {/* Fights Section */}
       <Fights />
       {/* Fighters Section */}
+      <Fighters />
       {/*  <h2>Fighters</h2>
       <div className="fighters-container">
         <div className="fighters-column">

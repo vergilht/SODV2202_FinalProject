@@ -1,15 +1,14 @@
 import sql from "mssql";
 
 export const config = {
-  server: "localhost",
-  port: 5200,
-  user: "user",
-  password: "user",
-  database: "MMA UFC Fights",
-  options: {
-    trustServerCertificate: true,
-  },
-};
+  server: 'localhost',
+  user: 'user',
+  password: 'user',
+  database: 'FightPrediction',
+  options:{
+    trustServerCertificate: true
+  }
+};;
 // Function to handle common database connection setup and closing
 const executeQuery = async (query, params) => {
   try {

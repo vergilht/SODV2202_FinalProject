@@ -68,7 +68,7 @@ export const GetFightsWithIndex = async function (offset) {
             `;
 
     const result = await executeQuery(query, []);
-    console.log(result);
+
     return result;
   } catch (err) {
     console.error(err);

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage.js";
 import FighterPage from "./components/Fighters.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (

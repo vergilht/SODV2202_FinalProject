@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Button, Card, Image, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Fights() {
   const [upcomingFights, setUpcomingFights] = useState([]);
@@ -30,39 +32,37 @@ function Fights() {
 
   return (
     <div>
-      <h2>Upcoming Fights</h2>
-      <div className="fights-container">
-        <ul>
-          {upcomingFights.map((fight) => (
-            <li key={fight.fight_id}>
-              {fight.name}
-              <div className="fighter_container">
-                <div className="fight_container_firstLine">
-                  UFC Fight Night: {fight.fighter_lname[0]} VS{" "}
-                  {fight.fighter_lname[1]}
-                </div>
-                <div className="fight_container_secondLine">
-                  {fight.weightclass[0]} - Main Event
-                </div>
-                <div className="fight_container_thirdLine">
-                  {GetFormatedDate(fight.date)} - {fight.location}
-                </div>
-                <div className="fight_container_fourthLine">
-                  <span className="fighter1">
-                    {fight.fighter_fname[0]} {fight.fighter_lname[0]}
-                  </span>
-                  <span> </span>
-                  <span className="fighter2">
-                    {fight.fighter_fname[1]} {fight.fighter_lname[1]}
-                  </span>
-                </div>
+      <h4>Upcoming Fights</h4>
+      <div>
+        {upcomingFights.map((fight) => (
+          <Card className="text-center m-3" key={fight.fight_id}>
+            <Card.Header>UFC Fight Night</Card.Header>
+            <Card.Title className="p-3">
+              {fight.fighter_lname[0]} VS {fight.fighter_lname[1]}
+            </Card.Title>
+            <Card.Text>
+              <div>{fight.weightclass[0]} - Main Event</div>
+              <div>
+                {GetFormatedDate(fight.date)} - {fight.location}
               </div>
-            </li>
-          ))}
-        </ul>
-        <div>
-          <button onClick={fetchFights}>More</button>
-        </div>
+              <div className="text-center m-3">
+                {fight.fighter_fname[0]} {fight.fighter_lname[0]}
+                <img
+                  style={{ width: "10%", margin: "2%" }}
+                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                ></img>
+                <img
+                  style={{ width: "10%", margin: "2%" }}
+                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                ></img>
+                {fight.fighter_fname[1]} {fight.fighter_lname[1]}
+              </div>
+            </Card.Text>
+          </Card>
+        ))}
+      </div>
+      <div className="text-center">
+        <Button onClick={fetchFights}>More</Button>
       </div>
     </div>
   );

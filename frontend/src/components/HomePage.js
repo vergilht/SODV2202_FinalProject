@@ -13,7 +13,7 @@ const HomePage = () => {
       <Fights />
 
       {/* Fighters Section */}
-      <Fighters />
+      {/* <Fighters /> */}
       {/*  <h2>Fighters</h2>
       <div className="fighters-container">
         <div className="fighters-column">

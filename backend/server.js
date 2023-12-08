@@ -3,8 +3,8 @@ import { GetFightsWithIndex } from "./db.js";
 import { GetFighters, GetFighterById } from "./db.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-const { json, urlencoded } = bodyParser;
 
+const { json, urlencoded } = bodyParser;
 const app = express();
 const port = 5100;
 

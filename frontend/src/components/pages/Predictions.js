@@ -53,9 +53,9 @@ function Predictions() {
             onChange={({ target }) => setFighter1(target.value)}
           >
             <option>Select Fighter 1</option>
-            {fighters.map(({ fighter_id, fighter_fname }) => (
+            {fighters.map(({ fighter_id, fighter_fname, fighter_lname }) => (
               <option value={fighter_id} key={fighter_id}>
-                {fighter_fname}
+                {fighter_fname} {fighter_lname}
               </option>
             ))}
           </Form.Select>
@@ -64,9 +64,9 @@ function Predictions() {
             onChange={({ target }) => setFighter2(target.value)}
           >
             <option>Select Fighter 2</option>
-            {fighters.map(({ fighter_id, fighter_fname }) => (
+            {fighters.map(({ fighter_id, fighter_fname, fighter_lname }) => (
               <option value={fighter_id} key={fighter_id}>
-                {fighter_fname}
+                {fighter_fname} {fighter_lname}
               </option>
             ))}
           </Form.Select>
@@ -78,13 +78,13 @@ function Predictions() {
                 {prediction.fighter1.fighter_fname}{" "}
                 {prediction.fighter1.fighter_lname}
                 {": "}
-                {prediction.fighter1.prediction}
+                {prediction.fighter1.prediction}%
               </div>
               <div>
                 {prediction.fighter2.fighter_fname}{" "}
                 {prediction.fighter2.fighter_lname}
                 {": "}
-                {prediction.fighter2.prediction}
+                {prediction.fighter2.prediction}%
               </div>
             </div>
           )}

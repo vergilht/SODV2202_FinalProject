@@ -87,7 +87,11 @@ app.get("/api/predictions", async (req, res) => {
   const fighter2 = fighter2Response[0];
 
   if (fighter1 && fighter2) {
-    res.json(calcFighterPrediction(fighter1, fighter2));
+    const prediction = calcFighterPrediction(fighter1, fighter2);
+    res.json({
+      fighter1: { ...fighter1, prediction: prediction.fighter1 },
+      fighter2: { ...fighter2, prediction: prediction.fighter2 },
+    });
   } else {
     res.status(500).json({ message: "Fighter not found" });
   }

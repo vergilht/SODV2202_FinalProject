@@ -1,14 +1,15 @@
 import sql from "mssql";
 
 export const config = {
-  server: 'localhost',
-  user: 'user',
-  password: 'user',
-  database: 'FightPrediction',
-  options:{
-    trustServerCertificate: true
-  }
-};;
+  server: "localhost",
+  port: 57000,
+  user: "user",
+  password: "user",
+  database: "FightPrediction",
+  options: {
+    trustServerCertificate: true,
+  },
+};
 // Function to handle common database connection setup and closing
 const executeQuery = async (query, params) => {
   try {
@@ -94,8 +95,7 @@ export const GetFighters = async function () {
 };
 
 export const GetFighterById = async (id) => {
-const query = 
-  `SELECT * FROM fighter WHERE fighter_id = ${id}`;
+  const query = `SELECT * FROM fighter WHERE fighter_id = ${id}`;
 
   try {
     const result = await executeQuery(query, []);
@@ -105,4 +105,4 @@ const query =
     console.error(err);
     throw err;
   }
-}
+};

@@ -2,7 +2,7 @@ import sql from "mssql";
 
 export const config = {
   server: "localhost",
-  port: 57000,
+  /* port: 57000, */
   user: "user",
   password: "user",
   database: "FightPrediction",
@@ -41,6 +41,7 @@ const executeQuery = async (query, params) => {
 // GET fights
 /*export const GetFights = async function () {
   const query = `
+      SELECT * FROM fight
       SELECT * FROM fight
       `;
 
@@ -82,6 +83,19 @@ export const GetFighters = async function () {
   const query = `
       SELECT * FROM fighter
       `;
+
+  try {
+    const result = await executeQuery(query, []);
+
+    return result;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
+export const GetFighterById = async (id) => {
+  const query = `SELECT * FROM fighter WHERE fighter_id = ${id}`;
 
   try {
     const result = await executeQuery(query, []);

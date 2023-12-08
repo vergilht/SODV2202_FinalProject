@@ -1,5 +1,7 @@
 # MMA PREDICTION TRACKER APPLICATION
 
+![MMA Prediction Application Website Layout](public/MMA%20PREDICTION%20LAYOUT.jpeg)
+
 ![MMA Prediction Application](public/MMA%20PREDICTION%20APPLICATION.png)
 
 ## Overview

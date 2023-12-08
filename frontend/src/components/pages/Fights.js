@@ -12,7 +12,7 @@ function Fights() {
       const data = await response.json();
       setUpcomingFights((prevFights) => [...prevFights, ...data]);
       console.log(upcomingFights);
-      setOffset((preOffset) => preOffset + 5);
+      setOffset((preOffset) => preOffset + 3);
     } catch (error) {
       console.error("Error fetching fights:", error);
     }

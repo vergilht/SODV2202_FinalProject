@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Card, Image, Row, Col } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Fights() {
@@ -12,7 +12,7 @@ function Fights() {
       const data = await response.json();
       setUpcomingFights((prevFights) => [...prevFights, ...data]);
       console.log(upcomingFights);
-      setOffset((preOffset) => preOffset + 5);
+      setOffset((preOffset) => preOffset + 3);
     } catch (error) {
       console.error("Error fetching fights:", error);
     }
@@ -35,9 +35,9 @@ function Fights() {
       <h4>Upcoming Fights</h4>
       <div>
         {upcomingFights.map((fight) => (
-          <Card className="text-center m-3" key={fight.fight_id}>
+          <Card className="text-center m-1" key={fight.fight_id}>
             <Card.Header>UFC Fight Night</Card.Header>
-            <Card.Title className="p-3">
+            <Card.Title className="p-2">
               {fight.fighter_lname[0]} VS {fight.fighter_lname[1]}
             </Card.Title>
             <Card.Text>
@@ -45,15 +45,15 @@ function Fights() {
               <div>
                 {GetFormatedDate(fight.date)} - {fight.location}
               </div>
-              <div className="text-center m-3">
+              <div className="text-center m-1">
                 {fight.fighter_fname[0]} {fight.fighter_lname[0]}
                 <img
-                  style={{ width: "10%", margin: "2%" }}
-                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                  style={{ width: "10%", margin: "1%" }}
+                  src={`/FighterImg/${fight.fighter_fname[0]}.png`}
                 ></img>
                 <img
-                  style={{ width: "10%", margin: "2%" }}
-                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                  style={{ width: "10%", margin: "1%" }}
+                  src={`/FighterImg/${fight.fighter_fname[1]}.png`}
                 ></img>
                 {fight.fighter_fname[1]} {fight.fighter_lname[1]}
               </div>

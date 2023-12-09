@@ -28,7 +28,9 @@ function Fighters() {
     try {
       const response = await fetch(`/api/fighters/${fighter_id}`);
       const data = await response.json();
-      setSelectedFighter(data);
+      if(data.length > 0){
+        setSelectedFighter(data[0]);
+      }
     } catch (error) {
       console.error("Error fetching fighter:", error);
     }

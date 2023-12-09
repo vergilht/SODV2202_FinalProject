@@ -20,6 +20,8 @@ matchup. The project is built using Node.js for the backend, React for the front
 
 ```bash
 /mma_prediction_tracker
+    /sql
+        FightPrediction.sql
     /frontend
         /src
             App.js
@@ -40,7 +42,7 @@ matchup. The project is built using Node.js for the backend, React for the front
         db.js
         server.js
     package.json
-    pac
+    package-lock.json
     README.md
 ```
 

@@ -90,10 +90,9 @@ function Fighters() {
               <Card.Header>Select a fighter</Card.Header>
               <Card.Body>
                 <Form.Select onChange={(e) => fetchFighterData(e.target.value)}>
-                  <option value="">Select a fighter</option>
                   {fighters.map((fighter) => (
-                      <option key={fighter.fighter_id} value={fighter.fighter_id}>
-                        {fighter.fighter_fname}
+                  <option key={fighter.fighter_id} value={fighter.fighter_id}>
+                    {fighter.fighter_fname} {fighter.fighter_lname}
                       </option>
                   ))}
                 </Form.Select>

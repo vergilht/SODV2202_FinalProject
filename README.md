@@ -6,7 +6,8 @@
 
 ## Overview
 
-MMA Prediction Tracker is a web application that allows users to track upcoming MMA fights and make predictions for each matchup. The project is built using Node.js for the backend, React for the frontend, and Express for the server.
+MMA Prediction Tracker is a web application that allows users to track upcoming MMA fights and make predictions for each
+matchup. The project is built using Node.js for the backend, React for the frontend, and Express for the server.
 
 ## Features
 

@@ -2,7 +2,7 @@ import sql from "mssql";
 
 export const config = {
   server: "localhost",
-  port: 5100,
+  port: 57000,
   user: "user",
   password: "user",
   database: "FightPrediction",

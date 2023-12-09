@@ -22,10 +22,7 @@ const HomePage = () => {
       </div>
 
       <div className="banner">
-        <img
-          src="/xuannguyen.jpg"
-          alt="MMA-Tracker-Banner"
-        />
+        <img src="/xuannguyen.jpg" alt="MMA-Tracker-Banner" />
       </div>
 
       <div className="container flex-center">
@@ -59,12 +56,7 @@ const HomePage = () => {
       <div className="section free-w-hero">
         <div className="container flex-center">
           <div className="hero-image-mask">
-            <img
-              src="/alora.jpg"
-              sizes="95vw"
-              alt=""
-              className="hero-image"
-            />
+            <img src="/alora.jpg" sizes="95vw" alt="" className="hero-image" />
             <img src="/Group117.svg" alt="" className="free-workout-shape" />
           </div>
           <div className="hero-line shop-line">

@@ -8,21 +8,6 @@ const { json, urlencoded } = bodyParser;
 const app = express();
 const port = 5100;
 
-const fighter = {
-  fighterId: 1,
-  firstName: "John",
-  middleName: "",
-  lastName: "Doe",
-  nickname: "Johny Rock",
-  teamId: "1",
-  height: 200,
-  weight: 200,
-  birthdate: "1990-10-26",
-  reach: 120,
-  stance: 30,
-  weightClassId: "3",
-};
-
 // Use middleware to parse JSON
 app.use(bodyParser.json());
 
@@ -59,9 +44,9 @@ app.get("/api/fighters", async (req, res) => {
 });
 
 //endpoint fighters
-app.get("/api/fighters/:id", (req, res) => {
+app.get("/api/fighters/:id", async (req, res) => {
   const fighterId = req.params.id;
-  const response = { ...fighter, fighterId };
+  const response = await GetFighterById(fighterId);
   res.json(response);
 });
 

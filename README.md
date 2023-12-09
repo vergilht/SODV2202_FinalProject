@@ -2,39 +2,47 @@
 
 ![MMA Prediction Application Website Layout](public/MMA%20PREDICTION%20LAYOUT.jpeg)
 
+Our wireframe layout for the website application
 ![MMA Prediction Application](public/MMA%20PREDICTION%20APPLICATION.png)
 
 ## Overview
 
-MMA Prediction Tracker is a web application that allows users to track upcoming MMA fights and make predictions for each
+MMA Prediction Tracker is a web application that allows users to track upcoming MMA fights, have a look at the Fighters profile and make predictions for each
 matchup. The project is built using Node.js for the backend, React for the frontend, and Express for the server.
 
 ## Features
 
-- **Upcoming Fights:** View a list of upcoming MMA fights with details about the fighters.
-- **Fighters Profile:** View a fighter's profile with details about their career.
-- **Fight Predictions:** Make and view predictions for each fight.
+- **Upcoming Fights:** View a list of upcoming MMA fights with details of the location, date and time. The user can click MORE to get more upcoming fights on the website interface
+- **Fighters Profile:** View a fighter's profile with details about their information, including: first name, last name, nickname, team, height, weight, birthdate, reach, stance, weight class, wins, ranking
+- **Fight Predictions:** Make and view predictions for each fight with logic to calculate the proability of winning.
 
 ## Project Structure
 
 ```bash
 /mma_prediction_tracker
+    /sql
+        FightPrediction.sql
     /frontend
         /src
             App.js
             index.js
             /components
-                HomePage.js
-                Fighters.js
-                Fights.js
-                Predictions.js
-            /styles
-                style.css
+                /pages 
+                    HomePage.js
+                    Fighters.js
+                    Fights.js
+                    Predictions.js
+                /styles
+                    HomePage.css
+                    Fighters.css
         /public
             MMA PREDICTION APPLICATION.png
-    /server
-        app.js
+            MMA PREDICTION LAYOUT.jpeg
+    /backend
+        db.js
+        server.js
     package.json
+    package-lock.json
     README.md
 ```
 
@@ -50,13 +58,25 @@ cd mma_prediction_tracker
 ### Install Dependencies:
 
 ```bash
+cd backend
+npm install init -y
+npm install express
+npm install cors
+npm install mssql
+
+
+cd frontend
 npm install
 ```
 
 ### Run the Application:
 
 ```bash
-npm run dev
+cd backend
+npm start
+
+cd frontend
+npm start
 ```
 
 Open your browser and navigate to http://localhost:3000.

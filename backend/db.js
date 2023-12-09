@@ -2,7 +2,7 @@ import sql from "mssql";
 
 export const config = {
   server: "localhost",
-  port: 57000,
+  port: 5100,
   user: "user",
   password: "user",
   database: "FightPrediction",
@@ -46,7 +46,7 @@ export const GetFightsWithIndex = async function (offset) {
           FROM fight f
           LEFT JOIN fighter ft1 ON f.fighter1_id = ft1.fighter_id
           LEFT JOIN fighter ft2 ON f.fighter2_id = ft2.fighter_id
-          ORDER BY f.fight_id 
+          ORDER BY f.fight_id
           OFFSET ${offset} ROWS 
           FETCH NEXT ${limit} ROWS ONLY;
             `;

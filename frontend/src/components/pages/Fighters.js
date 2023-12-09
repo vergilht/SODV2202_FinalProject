@@ -31,11 +31,11 @@ function Fighters() {
   return (
       <div>
         <div className="logo">
-          <img src="/MMA%20TRACKER.png" alt="MMA-Tracker-Application"/>
+          <img src="/MMATRACKER.png" alt="MMA-Tracker-Application"/>
         </div>
 
         <div className="banner">
-          <img src="/xuan-nguyen-jAke8NofTtE-unsplash.jpg" alt="MMA-Tracker-Banner"/>
+          <img src="/xuannguyen.jpg" alt="MMA-Tracker-Banner"/>
         </div>
 
         <div className="container flex-center">
@@ -62,7 +62,7 @@ function Fighters() {
           <div className="container flex-center">
             <div className="hero-image-mask">
               <img
-                  src="/alora-griffiths-TTrTW-pFxKw-unsplash.jpg"
+                  src="/alora.jpg"
                   sizes="95vw"
                   alt=""
                   className="hero-image"
@@ -131,7 +131,7 @@ function Fighters() {
             >
               <a className="footer-brand">
                 <img
-                    src="/MMA%20TRACKER.png"
+                    src="/MMATRACKER.png"
                     alt=""
                     className="brand-logo"
                 />

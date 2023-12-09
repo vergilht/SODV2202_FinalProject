@@ -18,12 +18,12 @@ const HomePage = () => {
   return (
     <div>
       <div className="logo">
-        <img src="/MMA%20TRACKER.png" alt="MMA-Tracker-Application" />
+        <img src="/MMATRACKER.png" alt="MMA-Tracker-Application" />
       </div>
 
       <div className="banner">
         <img
-          src="/xuan-nguyen-jAke8NofTtE-unsplash.jpg"
+          src="/xuannguyen.jpg"
           alt="MMA-Tracker-Banner"
         />
       </div>
@@ -60,7 +60,7 @@ const HomePage = () => {
         <div className="container flex-center">
           <div className="hero-image-mask">
             <img
-              src="/alora-griffiths-TTrTW-pFxKw-unsplash.jpg"
+              src="/alora.jpg"
               sizes="95vw"
               alt=""
               className="hero-image"
@@ -83,46 +83,46 @@ const HomePage = () => {
       <div className="gridFighter">
         <div className="fighter-icons">
           <Link to="/Fighters">
-            <img src="/Armen%20Petrosyan.png" alt="Fighter1" />
+            <img src="/ArmenPetrosyan.png" alt="Fighter1" />
           </Link>
           <Link to="/Fighters">
-            <img src="/Caio%20Borralho.png" alt="Fighter2" />
+            <img src="/CaioBorralho.png" alt="Fighter2" />
           </Link>
           <Link to="/Fighters">
-            <img src="/Daniel%20Marcos.png" alt="Fighter3" />
+            <img src="/DanielMarcos.png" alt="Fighter3" />
           </Link>
         </div>
         <div className="fighter-icons">
           <Link to="/Fighters">
-            <img src="/Darren%20Till.png" alt="Fighter4" />
+            <img src="/DarrenTill.png" alt="Fighter4" />
           </Link>
           <Link to="/Fighters">
-            <img src="/Derrick%20Lewis.png" alt="Fighter5" />
+            <img src="/DerrickLewis.png" alt="Fighter5" />
           </Link>
           <Link to="/Fighters">
-            <img src="/Elizeu%20Zaleski.png" alt="Fighter6" />
+            <img src="/ElizeuZaleski.png" alt="Fighter6" />
           </Link>
         </div>
         <div className="fighter-icons">
           <Link to="/Fighters">
-            <img src="/Gabriel%20Bonfim.png" alt="Fighter7" />
+            <img src="/GabrielBonfim.png" alt="Fighter7" />
           </Link>
           <Link to="/Fighters">
-            <img src="/Ismael%20Bonfim.png" alt="Fighter8" />
+            <img src="/IsmaelBonfim.png" alt="Fighter8" />
           </Link>
           <Link to="/Fighters">
-            <img src="/Jailton%20Almeda.png" alt="Fighter9" />
+            <img src="/JailtonAlmeda.png" alt="Fighter9" />
           </Link>
         </div>
         <div className="fighter-icons">
           <Link to="./Fighters">
-            <img src="/Nicolas%20Dalby.png" alt="Fighter10" />
+            <img src="/NicolasDalby.png" alt="Fighter10" />
           </Link>
           <Link to="./Fighters">
-            <img src="/Rinat%20Fakhretdinov.png" alt="Fighter11" />
+            <img src="/RinatFakhretdinov.png" alt="Fighter11" />
           </Link>
           <Link to="./Fighters">
-            <img src="/Rodolfo%20Vieira.png" alt="Fighter12" />
+            <img src="/RodolfoVieira.png" alt="Fighter12" />
           </Link>
         </div>
       </div>
@@ -141,7 +141,7 @@ const HomePage = () => {
             className="column"
           >
             <a href="#" className="footer-brand">
-              <img src="/MMA%20TRACKER.png" alt="" className="brand-logo" />
+              <img src="/MMATRACKER.png" alt="" className="brand-logo" />
             </a>
           </div>
 

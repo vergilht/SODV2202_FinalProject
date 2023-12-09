@@ -14,7 +14,13 @@ function Fighters() {
     // Fetch fighters data from API
     fetch("/api/fighters")
         .then((res) => res.json())
-        .then((data) => setFighters(data))
+        .then((data) => {
+          setFighters(data);
+        // Fetch data for the first fighter in the list
+        if (data.length > 0) {
+          fetchFighterData(data[0].fighter_id);
+        }
+        })
         .catch((err) => console.error("Error fetching fighters:", err));
   }, []);
 

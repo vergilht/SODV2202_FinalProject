@@ -75,3 +75,92 @@ app.get("/api/predictions", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+// Fight prediction
+var f1 = 0;
+var f2 = 0;
+
+if (fighter1.Height > fighter2.Height)
+{
+    f1 = f1 + 1;
+} else if (fighter1.Height < fighter2.Height){
+    f2 = f2 + 1;
+} else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+} 
+
+if (fighter1.Weight > fighter2.Weight)
+{
+    f1 = f1 + 1;
+} else if (fighter1.Weight < fighter2.Weight){
+    f2 = f2 + 1;
+} else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+} 
+
+if (fighter1.Wins > fighter2.Wins)
+{
+    f1 = f1 + 1;
+} else if (fighter1.Wins < fighter2.Wins) {
+    f2 = f2 + 1;
+} else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+} 
+
+if (fighter1.Reach > fighter2.Reach)
+{
+    f1 = f1 + 1;
+} else if (fighter1.Reach < fighter2.Reach) {
+    f2 = f2 + 1;
+} else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+} 
+
+if (fighter1.Stance == "switch")
+{
+    var stance1 = 3;
+} else if (fighter1.Stance == "southpaw") {
+    stance1 = 2;
+} else {
+    stance1 = 1;
+}
+
+if (fighter2.Stance == "switch")
+{
+    var stance2 = 3;
+} else if (fighter2.Stance == "southpaw") {
+    stance2 = 2;
+} else {
+    stance2 = 1;
+}
+
+if (stance1 > stance2)
+{
+    f1 = f1 + 1;
+} else if (stance1 < stance2) {
+    f2 = f2 + 1;
+} else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+} 
+
+if (fighter1.Rank > fighter2.Rank)
+{
+    f1 = f1 + 1;
+} else if (fighter1.Rank < fighter2.Rank) {
+    f2 = f2 + 1;
+} else {
+    f1 = f1 + 1;
+    f2 = f2 + 1;
+} 
+
+if (f1 > f2)
+{
+    prediction: `${fighter1.Name} wins`;
+} else {
+    prediction: `${fighter2.Name} wins`;
+}
